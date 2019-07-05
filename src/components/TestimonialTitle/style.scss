@@ -1,0 +1,18 @@
+.testimonial-title {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 1rem 0;
+	.gatsby-image-wrapper {
+		width: 40px;
+		height: 40px;
+		border-radius: 100px;
+		margin-right: 1rem;
+	}
+	p {
+		font-weight: 900;
+		color: #000;
+		margin-bottom: 0;
+		margin-top: 0;
+	}
+}

@@ -1,0 +1,23 @@
+@import 'scss/colors.scss';
+
+.clients {
+	padding: 3rem 0 0 0;
+	p {
+		font-size: 0.8rem;
+	}
+	.logos {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		padding: 1rem;
+		@media (min-width: 768px) {
+			flex-wrap: nowrap;
+			padding: 1rem 3rem;
+		}
+		& > div {
+				width: 100%;
+				max-width: 20%;
+				margin: 1rem 0;
+			}
+	} 
+}

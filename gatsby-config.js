@@ -1,6 +1,58 @@
+const themeConfig = {
+  typography: {
+    useNextVariants: true,
+    fontFamily: [
+      'Colfax',
+      '-apple-system',
+      'BlinkMacSystemFont',
+      '"Segoe UI"',
+      '"Helvetica Neue"',
+      'Arial',
+      'sans-serif',
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(','),
+    fontSize: 16,
+    h1: {
+      fontSize: '2rem',
+      lineHeight: 1.1,
+      fontWeight: 600,
+    },
+    h2: {
+      fontSize: '1.51572rem',
+      lineHeight: 1.1,
+      fontWeight: 500,
+    },
+    h3: {
+      fontSize: '1.31951rem',
+      lineHeight: 1.1,
+      fontWeight: 500,
+    },
+    h5: {
+      textTransform: 'uppercase',
+      fontSize: '0.8rem',
+      letterSpacing: '1px',
+      fontWeight: 500,
+    },
+    button: {
+      textTransform: 'inherit',
+    },
+  },
+  palette: {
+    text: {
+      primary: '#000',
+      secondary: '#555',
+    },
+    primary: {
+      main: '#05f',
+    },
+  },
+};
+
 module.exports = {
   siteMetadata: {
-    title: 'Gatstrap',
+    title: 'Bruno Speaks',
     description: 'Gatsby starter for bootstrap a blog',
     siteUrl: 'https://gatstrap.netlify.com',
     author: 'jaxx2104',
@@ -34,6 +86,13 @@ module.exports = {
               linkImagesToOriginal: false,
               wrapperStyle: 'margin-bottom: 1.0725rem;',
             },
+          },
+          {
+            resolve: `gatsby-plugin-typography`,
+            options: {
+            pathToConfigModule: `src/utils/typography`,
+            theme: themeConfig
+              }
           },
           {
             resolve: 'gatsby-remark-responsive-iframe',

@@ -20,11 +20,19 @@ class Layout extends React.Component {
     emergence.init()
   }
 
+  state = {
+    header: [
+      {
+        modalClass: 'not-active'
+      },
+    ],
+  }
+
   render() {
     const { children } = this.props
     return (
       <div>
-        <Navi title={siteMetadata.title} {...this.props} />
+        <Navi color="bg-white" title={siteMetadata.title} {...this.props} />
         {children}
         <Footer title={siteMetadata.title} author={siteMetadata.author} />
       </div>

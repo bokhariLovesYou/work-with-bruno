@@ -1,0 +1,46 @@
+.blue-CTA {
+    background: linear-gradient(90deg,#05f,#09f);
+    box-shadow: 0 0 8px rgba(0,0,0,.03), 0 20px 30px rgba(0,0,0,.1);
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    position: relative;
+    .gatsby-image-wrapper {
+    	display: none;
+    }
+    h3 {
+    	font-size: 1.8rem;
+    	font-weight: 900;
+    }
+    p.sub-title {
+    	font-weight: 300;
+    	color: rgba(255,255,255,.7);
+    	margin-bottom: 0.5rem;
+    }
+    @media(min-width: 768px) {
+    	overflow: hidden;
+    	.content-box:nth-child(1) {
+    		position: relative;
+    		z-index: 2;
+    		text-align: left;
+    	}
+    	.content-box:nth-child(2) {
+    		display: block;
+    		position: absolute;
+    		right: -400px;
+    		top: 0;
+    		width: 100%;
+    		z-index: 1;
+    	}
+    	.gatsby-image-wrapper {
+    		display: block;
+    	}
+    }
+    @media(min-width: 992px) {
+    	.content-box:nth-child(2) {
+    		right: -550px;
+    		top: 50px;
+    	}
+    	padding: 4rem;
+    }
+}

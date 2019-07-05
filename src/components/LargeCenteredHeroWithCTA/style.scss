@@ -1,0 +1,19 @@
+@import 'scss/colors.scss';
+.large-hero-centered-cta {
+	.content-box.equip-width {
+		padding: 0 1rem;
+		max-width: 600px;
+		margin-left: auto;
+		margin-right: auto;
+		@media(min-width: 992px) {
+			max-width: 800px;
+			padding: 1rem;
+		}
+	}
+	.content-box.second {
+		padding: 3rem 0 1rem 0;
+		.gatsby-image-wrapper {
+			box-shadow: 0 1px 0 rgba(0,0,0,.075), 0 1px 4px rgba(0,0,0,.05), 0 10px 30px rgba(0,0,0,.06);
+		}
+	}
+}
