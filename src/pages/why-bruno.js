@@ -45,6 +45,7 @@ class WhyBruno extends Component {
       <Layout location={location} color={this.state.header[0].customClass}>
         <Helmet>
           <html className={this.state.header[0].customClass} />
+          <body className={this.state.header[0].customClass} />
         </Helmet>
         <Meta site={siteMetadata} title="Why Bruno" />
           <Section count="one" customClass="bg-lightblue text-inverted floating-section">
