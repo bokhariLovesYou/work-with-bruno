@@ -16,6 +16,7 @@ import LargeHeroCenteredCTAH2 from 'components/LargeCenteredHeroWithCTAH2'
 import { Container, Row, Col } from 'react-bootstrap';
 import { Waypoint } from 'react-waypoint';
 import { siteMetadata } from '../../gatsby-config'
+import Helmet from 'react-helmet'
 
 class WhyBruno extends Component {
 
@@ -42,6 +43,9 @@ class WhyBruno extends Component {
     const { location, data } = this.props 
     return (
       <Layout location={location} color={this.state.header[0].customClass}>
+        <Helmet>
+          <html className={this.state.header[0].customClass} />
+        </Helmet>
         <Meta site={siteMetadata} title="Why Bruno" />
           <Section count="one" customClass="bg-lightblue text-inverted floating-section">
             <Container className="text-center text-lg-left">
@@ -67,7 +71,7 @@ class WhyBruno extends Component {
             onLeave={handleHeaderClass}
             bottomOffset="99%" topOffset="0%"
             />
-          <Section count="two" customClass="med-large">
+          <Section count="two" customClass="med-large bg-white">
             <Container>
               <Row className="align-items-center">
                 <Col xl="6" className="order-2 order-xl-1">
@@ -101,7 +105,7 @@ class WhyBruno extends Component {
               />
             </Container>
           </Section>
-          <Section count="four" customClass="med-large">
+          <Section count="four" customClass="med-large bg-white">
             <Container>
               <Row className="align-items-center">
                 <Col xl="6" className="order-xl-2">
