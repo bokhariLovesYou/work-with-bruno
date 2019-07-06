@@ -32,12 +32,12 @@ class Navi extends React.Component {
 	        <div className="headerWrapper">
 	        	<div className="custom-col col-left">
 	        		<div className="logo-box">
-	        			<div className="logo"><span>Ö</span></div>
+	        			<Link to="/"><div className="logo"><span>Ö</span></div></Link>
 	        		</div>
 	        	</div>
 	        	<div className="desktop-nav">
 	        		<ul>
-	        			<li>Why Bruno</li>
+	        			<Link to="/why-bruno"><li>Why Bruno</li></Link>
 	        			<li>How it works</li>
 	        			<li>Support</li>
 	        			<li>Blog</li>
@@ -64,11 +64,11 @@ class Navi extends React.Component {
 			        <p className="small">The Questions</p>
 			      </li>
 			      <li>
-			        <a href="/design">
+			        <Link to="/why-bruno">
 			          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
 			            <path d="M 9.744 -1.163 C 9.867 -1.344 10.133 -1.344 10.256 -1.163 L 11.05 0 L 8.95 -0 Z M 14.568 5.154 C 15.022 5.82 15.449 6.505 15.848 7.207 L 17.306 9.777 C 17.761 10.579 18 11.485 18 12.406 C 18 16.6 14.6 20 10.406 20 L 9.594 20 C 5.4 20 2 16.6 2 12.406 C 2 11.485 2.239 10.579 2.694 9.777 L 4.152 7.207 C 4.551 6.505 4.978 5.82 5.432 5.154 L 8.847 0.151 C 8.927 0.154 9 0.218 9 0.309 L 9 7.812 C 9 8.781 8.404 9.651 7.5 10 L 7.764 10 C 7.289 10.531 7 11.232 7 12 C 7 13.657 8.343 15 10 15 C 11.657 15 13 13.657 13 12 C 13 11.232 12.711 10.531 12.236 10 L 12.5 10 C 11.596 9.651 11 8.781 11 7.812 L 11 0.309 C 11 0.218 11.073 0.154 11.153 0.151 Z" fill="rgba(51, 51, 51, 1.00)"></path>
 			          </svg>Why Bruno
-			        </a>
+			        </Link>
 			      </li>
 			      <li>
 			        <a href="/prototyping">

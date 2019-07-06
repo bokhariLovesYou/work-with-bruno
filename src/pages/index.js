@@ -14,10 +14,10 @@ import BlueCTA from 'components/BlueCTA'
 import LargeHeroCenteredCTA from 'components/LargeCenteredHeroWithCTA'
 import { Container, Row, Col } from 'react-bootstrap';
 
-const BlogIndex = ({ data, location }) => {
+const Homepage = ({ data, location }) => {
   const posts = get(data, 'remark.posts')
   return (
-    <Layout location={location}>
+    <Layout location={location} color="bg-white">
       <Meta site={get(data, 'site.meta')} />
         <Section count="one" customClass="noClass">
           <Container>
@@ -117,7 +117,7 @@ const BlogIndex = ({ data, location }) => {
   )
 }
 
-export default BlogIndex
+export default Homepage
 
 export const pageQuery = graphql`
   query {
