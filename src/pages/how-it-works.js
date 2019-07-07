@@ -97,7 +97,7 @@ class HowItWorks extends Component {
                 paragraphXS="Bring your creative ideas to life with Brunö, the best tool for interactive design."
                 paragraphXSAbove='Bring your creative ideas to life with Brunö, the best tool for interactive design. Create responsive layouts, design realistic prototypes, and bring everything closer to production—all in one place.'
                 imageSrc={data.imageOne.childImageSharp.fluid}
-                imageClass="fade-bottom"
+                imageClass="fade-bottom-lg"
               />
               <Clients 
                 title="The best teams use Brunö"
