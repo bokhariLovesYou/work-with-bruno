@@ -18,61 +18,58 @@ import { Waypoint } from 'react-waypoint';
 import { siteMetadata } from '../../gatsby-config'
 import Helmet from 'react-helmet'
 
-class WhyBruno extends Component {
-
-    state = {
-      header: [
-        {
-          customClass: 'bg-lightblue'
-        },
-      ],
-    }
-
+class HowItWorks extends Component {
     render() {
-    const handleHeaderClass = () => {
-        if (this.state.header[0].customClass === "bg-lightblue") {
-          this.setState(prevState => ({
-            customClass: (prevState.header[0].customClass = "bg-white")
-          }))
-        } else {
-          this.setState(prevState => ({
-            customClass: (prevState.header[0].customClass = "bg-lightblue")
-          }))
-        }
-      }
     const { location, data } = this.props 
     return (
-      <Layout location={location} color={this.state.header[0].customClass} footerClass="bg-white">
+      <Layout location={location} color='bg-night' footerClass='bg-night text-inverted'>
         <Helmet>
-          <html className={this.state.header[0].customClass} />
-          <body className={this.state.header[0].customClass} />
+          <html className='bg-night' />
+          <body className='bg-night' />
         </Helmet>
-        <Meta site={siteMetadata} title="Why Bruno" />
-          <Section count="one" customClass="bg-lightblue text-inverted floating-section">
+        <Meta site={siteMetadata} title="How It Works" />
+          <Section count="one" customClass="bg-night text-inverted floating-section border-top-bottom">
             <Container className="text-center text-lg-left">
               <Row className="align-items-xl-center">
-                <Col xl="6">
+                <Col xl="6" className="order-xl-2">
                   <TitleContentCTA 
                     title="Visual design for the busy creative."
                     paragraph="Automated layout design, premade components, and predictive vector editing. Get the basics done faster."
                     customClass="noClass"
                   />  
                 </Col>
-                <Col xl="6 pos-rel">
+                <Col xl="6 pos-rel" className="order-xl-1 make-me-left">
                   <ImageComp 
-                    imageSrc={data.imageOne.childImageSharp.fluid}
+                    imageSrc={data.imageSix.childImageSharp.fluid}
                     customClass='image-wrapper'
-                    imageClass="floating-image"
+                    imageClass="floating-image fade-bottom"
                   />
                 </Col>
               </Row>
             </Container>
           </Section>
-          <Waypoint
-            onLeave={handleHeaderClass}
-            bottomOffset="99%" topOffset="0%"
-            />
-          <Section count="two" customClass="med-large bg-white">
+          <Section count="two" customClass="med-large bg-night text-inverted border-top-bottom">
+            <Container>
+              <Row className="align-items-center">
+                <Col xl="6" className="order-xl-2">
+                  <ImageComp 
+                    imageSrc={data.imageTwo.childImageSharp.fluid}
+                    customClass='noClass'
+                    imageClass="tall-image box-shadow fade-top-less"
+                  />
+                </Col>
+                <Col xl="6" className="order-xl-1">
+                  <SmallContent 
+                    customClass='bottom-padding'
+                    dimText='Interactions'
+                    title='Simply rapid prototyping.'
+                    paragraph='Brunö offers tools to design scroll, link and page interactions. But don’t stop there—add a 3D effect or momentum. Create flows that feel real. And do it all in half the time.'
+                  />
+                </Col>
+              </Row>
+            </Container>
+          </Section>
+          <Section count="three" customClass="med-large bg-night text-inverted">
             <Container>
               <Row className="align-items-center">
                 <Col xl="6" className="order-2 order-xl-1">
@@ -93,41 +90,21 @@ class WhyBruno extends Component {
               </Row>
             </Container>
           </Section>
-          <Section count="three" customClass="noClass bg-gray med-large">
+          <Section count="three" customClass="noClass bg-night text-inverted med-large border-top-bottom">
             <Container>
               <LargeHeroCenteredCTAH2
                 title="Always interactive design."
                 paragraphXS="Bring your creative ideas to life with Brunö, the best tool for interactive design."
                 paragraphXSAbove='Bring your creative ideas to life with Brunö, the best tool for interactive design. Create responsive layouts, design realistic prototypes, and bring everything closer to production—all in one place.'
                 imageSrc={data.imageOne.childImageSharp.fluid}
+                imageClass="fade-bottom"
               />
               <Clients 
                 title="The best teams use Brunö"
               />
             </Container>
           </Section>
-          <Section count="four" customClass="med-large bg-white">
-            <Container>
-              <Row className="align-items-center">
-                <Col xl="6" className="order-xl-2">
-                  <ImageComp 
-                    imageSrc={data.imageTwo.childImageSharp.fluid}
-                    customClass='noClass'
-                    imageClass="tall-image box-shadow"
-                  />
-                </Col>
-                <Col xl="6" className="order-xl-1">
-                  <SmallContent 
-                    customClass='bottom-padding'
-                    dimText='Interactions'
-                    title='Simply rapid prototyping.'
-                    paragraph='Brunö offers tools to design scroll, link and page interactions. But don’t stop there—add a 3D effect or momentum. Create flows that feel real. And do it all in half the time.'
-                  />
-                </Col>
-              </Row>
-            </Container>
-          </Section>
-          <Section count="five" customClass="med-large testimonial-section bg-gray">
+          <Section count="five" customClass="med-large testimonial-section bg-night text-inverted">
             <Container className="text-center">
               <TextContent 
                 content="“Brunö’s React codebase will allow our designers to get closer to high-fidelity implementation with engineering.”"
@@ -139,7 +116,7 @@ class WhyBruno extends Component {
               />  
             </Container>
           </Section>
-          <Section count="six" customClass="small-section bg-gray">
+          <Section count="six" customClass="small-section bg-night">
             <Container>
               <BlueCTA 
                 title='Get Brunö'
@@ -153,7 +130,7 @@ class WhyBruno extends Component {
   }
 }
 
-export default WhyBruno
+export default HowItWorks
 
 export const pageQuery = graphql`
   query {
@@ -181,6 +158,20 @@ export const pageQuery = graphql`
     imageFour: file(relativePath: { eq: "ash.png" }) {
       childImageSharp {
         fluid(maxWidth: 3000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    imageFive: file(relativePath: { eq: "app-two.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 2000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    imageSix: file(relativePath: { eq: "app-three.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 2000) {
           ...GatsbyImageSharpFluid
         }
       }

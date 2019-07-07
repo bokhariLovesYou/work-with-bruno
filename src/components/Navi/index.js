@@ -38,7 +38,7 @@ class Navi extends React.Component {
 	        	<div className="desktop-nav">
 	        		<ul>
 	        			<Link to="/why-bruno"><li>Why Bruno</li></Link>
-	        			<li>How it works</li>
+	        			<Link to="/how-it-works"><li>How it works</li></Link>
 	        			<li>Support</li>
 	        			<li>Blog</li>
 	        		</ul>
@@ -71,11 +71,11 @@ class Navi extends React.Component {
 			        </Link>
 			      </li>
 			      <li>
-			        <a href="/prototyping">
+			        <Link to="/how-it-works">
 			          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
 			            <path d="M 10 0 C 15.523 0 20 4.477 20 10 C 20 15.523 15.523 20 10 20 C 4.477 20 0 15.523 0 10 C 0 4.477 4.477 0 10 0 Z M 7.615 12 C 7.828 12 8 12.172 8 12.385 L 8 14.571 C 8 14.914 8.414 15.086 8.657 14.843 L 14.843 8.657 C 15.086 8.414 14.914 8 14.571 8 L 12.385 8 C 12.172 8 12 7.828 12 7.615 L 12 5.429 C 12 5.086 11.586 4.914 11.343 5.157 L 5.157 11.343 C 4.914 11.586 5.086 12 5.429 12 Z" fill="rgba(51, 51, 51, 1.00)"></path>
 			          </svg>How it works
-			        </a>
+			        </Link>
 			      </li>
 			    </ul>
 

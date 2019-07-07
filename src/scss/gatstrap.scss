@@ -69,13 +69,23 @@ body {
   width: 100%;
 }
 
-body {
-  margin-top: 77px;
+// body {
+//   margin-top: 77px;
+//   @media(min-width: 768px) {
+//     margin-top: 81px
+//   }
+//   @media (min-width: 992px) {
+//     margin-top: 85px;
+//   }
+// }
+
+#section-one {
+  padding-top: calc(3rem + 77px);
   @media(min-width: 768px) {
-    margin-top: 81px
+    padding-top: calc(3rem + 81px);
   }
   @media (min-width: 992px) {
-    margin-top: 85px;
+    padding-top: calc(3rem + 85px);
   }
 }
 
@@ -135,6 +145,10 @@ section.small-section {
   background-color: $lightBlue;
 }
 
+.bg-night {
+  background-color: #000;
+}
+
 .mw-850 {
   max-width: 850px;
 }
@@ -143,6 +157,29 @@ section.small-section {
   max-width: 650px;
 }
 
+.fade-bottom:before,
+.fade-top:before {
+  content: '';
+  top: 0;
+  right: 0;
+  width: 100%;
+  position: absolute; 
+  height: 100%;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0,0,0,1)));
+    background-image: -webkit-linear-gradient(top, transparent, rgba(0,0,0,1));
+    background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,1));
+  z-index: 2;
+}
+
+.fade-top-less:before {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0,0,0,1)));
+    background-image: -webkit-linear-gradient(top, transparent, rgba(0,0,0,1));
+    background-image: linear-gradient(to top, transparent, rgba(0,0,0,0.9));
+}
+
+footer.text-inverted h6 {
+  color: #444;
+}
 
 // Typography
 
@@ -182,7 +219,7 @@ h1 {
 }
 
 .text-inverted {
-  h1, h2, h3, p, p.sub-title, a, a.link-cta {
+  h1, h2, h3, h5, h6, h4, ul li, ul li a, p, p.sub-title, a, a.link-cta, .testimonial-title p {
     color: $white;
   }
 }
@@ -484,7 +521,7 @@ header {
       }
     }
   }
-  &.bg-lightblue {
+  &.bg-lightblue, &.bg-night {
     .cta-wrapper ul {
       li.default-button {
         &:nth-child(1) {
@@ -533,6 +570,27 @@ header {
       p.small {
         color: rgba(255,255,255,.7);
       }
+    }
+  }
+  &.bg-night {
+    box-shadow: 0 1px 0 rgba(255,255,255,.1);
+    .logo {
+      span {
+        color: $black;
+      }
+    }
+    .cta-wrapper ul {
+      li.default-button {
+        &:nth-child(1) {
+          color: $black;
+        }
+      }
+      li.silver-button {
+        background-color: $blue;
+      }
+    }
+    .nav-sub {
+      background-color: $black;
     }
   }
 }
@@ -595,6 +653,22 @@ section.floating-section {
   position: relative;
 }
 
+section.border-top-bottom {
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.1), inset 0 -1px 0 rgba(255,255,255,.1);
+}
+
+section.text-inverted {
+  path {
+    fill: #e8e8e8;
+  }
+  .clients {
+    p {
+      color: #666;
+    }
+  }
+}
+
+
 .floating-section {
   .image-wrapper {
     position: relative;
@@ -647,7 +721,70 @@ section.floating-section {
       }
     }
   }
+}
 
+.floating-section {
+  .make-me-left {
+    .image-wrapper {
+      min-height: 140px;
+      .floating-image {
+        right: unset; 
+        left: -80px;
+        min-height: 200px;
+        img {
+          object-position: right !important;
+        }
+      }
+      @media (min-width: 500px) {
+        min-height: 230px;
+        margin-top: 2.4rem;
+        .floating-image {
+          min-height: 300px;
+        }
+      }
+      @media (min-width: 768px) {
+        min-height: 270px;
+        margin-top: 2.6rem;
+        .floating-image {
+          left: -180px;
+        }
+      }
+      @media (min-width: 992px) {
+        min-height: 340px;
+      }
+      @media (min-width: 1200px) {
+        min-height: 550px;
+        margin-top: 0;
+        .floating-image {
+          height: 640px;
+          width: 700px;
+          top: 0;
+        img {
+          object-position: top right !important;
+        }
+        }
+        @media(min-width: 1400px) { 
+          .floating-image {
+            left: -500px;
+            width: 1000px;
+          }
+        }
+        @media(min-width: 2100px) {
+          .floating-image {
+            left: -750px;
+            width: 1200px;
+          }
+        }
+      }
+    }
+    @media(min-width: 1200px) {
+      .title-content-cta {
+        .content-box {
+          padding-left: 2.2rem;
+        }
+      }
+    }
+  }
 }
 
 

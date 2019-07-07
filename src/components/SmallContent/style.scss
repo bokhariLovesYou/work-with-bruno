@@ -1,18 +1,18 @@
 .small-content {
 	.top-padding {
-		padding: 4rem 0 1rem 0;
+		padding: 4rem 0 0 0;
 		@media (min-width: 1200px) {
 			padding: 0 2rem 0 4rem;
 		}
 	}
 	.bottom-padding {
-		padding: 4rem 0 1rem 0;
+		padding: 4rem 0 0 0;
 		@media (min-width: 1200px) {
 			padding: 0 4rem 0 1rem;
 		}
 	}
 	.fix-padding {
-		padding: 1rem 0 4rem 0;
+		padding: 0 0 4rem 0;
 		@media (min-width: 1200px) {
 			padding: 0 2rem 0 4rem;
 		}

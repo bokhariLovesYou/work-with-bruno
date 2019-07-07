@@ -17,7 +17,7 @@ class LargeHeroCenteredCTAH2 extends React.Component {
               <p className="sub-title paragraphXSAbove">{this.props.paragraphXSAbove}</p>
         		</ContentBox>
             <ContentBox customClass="second">
-              <Img fluid={this.props.imageSrc} />
+              <Img fluid={this.props.imageSrc} className={this.props.imageClass}/>
             </ContentBox>
           </div>
     )

@@ -12,12 +12,17 @@ import SmallContent from 'components/SmallContent'
 import TestimonialTitle from 'components/TestimonialTitle'
 import BlueCTA from 'components/BlueCTA'
 import LargeHeroCenteredCTA from 'components/LargeCenteredHeroWithCTA'
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap'
+import Helmet from 'react-helmet'
 
 const Homepage = ({ data, location }) => {
   const posts = get(data, 'remark.posts')
   return (
-    <Layout location={location} color="bg-white">
+    <Layout location={location} color="bg-white" footerClass="bg-white">
+      <Helmet>
+        <html className='bg-white' />
+        <body className='bg-white' />
+      </Helmet>
       <Meta site={get(data, 'site.meta')} />
         <Section count="one" customClass="noClass">
           <Container>
