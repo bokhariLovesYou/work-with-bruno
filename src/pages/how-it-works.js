@@ -111,7 +111,7 @@ class HowItWorks extends Component {
                 customClass="bolder-font pt-2 pb-2 mw-650 ml-auto mr-auto"
               />
               <TestimonialTitle 
-                imageSrc={data.imageOne.childImageSharp.fluid}
+                imageSrc={data.imageFour.childImageSharp.fluid}
                 customClass='noClass'
               />  
             </Container>
