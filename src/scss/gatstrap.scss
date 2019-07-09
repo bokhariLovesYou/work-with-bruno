@@ -149,6 +149,10 @@ section.small-section {
   background-color: #000;
 }
 
+.bg-blue {
+  background-color: $blue;
+}
+
 .mw-850 {
   max-width: 850px;
 }
@@ -157,8 +161,16 @@ section.small-section {
   max-width: 650px;
 }
 
+.pl-15 {
+  padding-left: 15px !important;
+}
+
+.pr-15 {
+  padding-right: 15px !important;
+}
+
 .fade-bottom:before,
-.fade-top:before {
+.fade-top:before{
   content: '';
   top: 0;
   right: 0;
@@ -176,6 +188,7 @@ section.small-section {
     background-image: -webkit-linear-gradient(top, transparent, rgba(0,0,0,1));
     background-image: linear-gradient(to top, transparent, rgba(0,0,0,0.9));
 }
+
 
 .fade-bottom-lg:before {
   @media(min-width: 992px) {
@@ -536,7 +549,7 @@ header {
       }
     }
   }
-  &.bg-lightblue, &.bg-night {
+  &.bg-lightblue, &.bg-night, &.bg-blue {
     .cta-wrapper ul {
       li.default-button {
         &:nth-child(1) {
@@ -606,6 +619,28 @@ header {
     }
     .nav-sub {
       background-color: $black;
+    }
+  }
+  &.bg-blue {
+    .logo {
+      span {
+        color: $blue;
+      }
+    }
+    .cta-wrapper ul {
+      li.default-button {
+        &:nth-child(1) {
+          color: $blue;
+          background-color: $white;
+        }
+      }
+      li.silver-button {
+        background-color: $black;
+        color: #fff;
+      }
+    }
+    .nav-sub {
+      background-color: $blue;
     }
   }
 }
@@ -806,5 +841,15 @@ section.custom-404 {
   }
 }
 
+
+.bg-blue {
+  .default-button {
+    background-color: $white;
+    color: $blue;
+    &:hover {
+      background-color: $silver;
+    }
+  }
+}
 
 

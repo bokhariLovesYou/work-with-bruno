@@ -39,7 +39,7 @@ class Navi extends React.Component {
 	        		<ul>
 	        			<Link to={__dirname + '/why-bruno'}><li>Why Bruno</li></Link>
 	        			<Link to={__dirname + '/how-it-works'}><li>How it works</li></Link>
-	        			<li>Support</li>
+	        			<Link to={__dirname + '/features'}><li>Features</li></Link>
 	        			<li>Blog</li>
 	        		</ul>
 	        	</div>
@@ -85,11 +85,11 @@ class Navi extends React.Component {
 			        <p className="small">Resources</p>
 			      </li>
 			      <li>
-			        <a href="/api">
+			        <Link to={__dirname + '/features'}>
 			          <svg width="20" height="22">
 			            <path d="M 18.83 14.181 C 19.398 14.579 19.398 15.421 18.83 15.819 L 10.86 21.398 C 10.344 21.759 9.656 21.759 9.14 21.398 L 1.17 15.819 C 0.602 15.421 0.602 14.579 1.17 14.181 L 4.254 12.022 L 8.862 15.212 C 9.546 15.686 10.454 15.686 11.138 15.212 L 15.746 12.022 Z M 9.14 0.602 C 9.656 0.241 10.344 0.241 10.86 0.602 L 18.83 6.181 C 19.398 6.579 19.398 7.421 18.83 7.819 L 10.86 13.398 C 10.344 13.759 9.656 13.759 9.14 13.398 L 1.17 7.819 C 0.602 7.421 0.602 6.579 1.17 6.181 Z" fill="#333"></path>
-			          </svg>Support
-			        </a>
+			          </svg>Features
+			        </Link>
 			      </li>
 			      <li>
 			        <a href="/blog">
