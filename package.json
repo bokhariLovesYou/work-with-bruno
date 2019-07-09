@@ -90,6 +90,7 @@
     "lint:text": "textlint src/pages/**/index.md",
     "lint:textfix": "textlint --fix src/pages/**/index.md",
     "precommit": "lint-staged",
+    "clean": "gatsby clean",
     "test": "prettier --write \"**/*.+(js|jsx|json|css|scss)\""
   }
 }

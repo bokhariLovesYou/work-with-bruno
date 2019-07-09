@@ -683,6 +683,10 @@ section.text-inverted {
   }
 }
 
+section.custom-404 {
+  min-height: calc(100vh - 76px);
+}
+
 
 .floating-section {
   .image-wrapper {

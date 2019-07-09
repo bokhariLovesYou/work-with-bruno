@@ -32,13 +32,13 @@ class Navi extends React.Component {
 	        <div className="headerWrapper">
 	        	<div className="custom-col col-left">
 	        		<div className="logo-box">
-	        			<Link to="/"><div className="logo"><span>Ö</span></div></Link>
+	        			<Link to={__dirname}><div className="logo"><span>Ö</span></div></Link>
 	        		</div>
 	        	</div>
 	        	<div className="desktop-nav">
 	        		<ul>
-	        			<Link to="/why-bruno"><li>Why Bruno</li></Link>
-	        			<Link to="/how-it-works"><li>How it works</li></Link>
+	        			<Link to={__dirname + '/why-bruno'}><li>Why Bruno</li></Link>
+	        			<Link to={__dirname + '/how-it-works'}><li>How it works</li></Link>
 	        			<li>Support</li>
 	        			<li>Blog</li>
 	        		</ul>
@@ -64,14 +64,14 @@ class Navi extends React.Component {
 			        <p className="small">The Questions</p>
 			      </li>
 			      <li>
-			        <Link to="/why-bruno">
+			        <Link to={__dirname + '/why-bruno'}>
 			          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
 			            <path d="M 9.744 -1.163 C 9.867 -1.344 10.133 -1.344 10.256 -1.163 L 11.05 0 L 8.95 -0 Z M 14.568 5.154 C 15.022 5.82 15.449 6.505 15.848 7.207 L 17.306 9.777 C 17.761 10.579 18 11.485 18 12.406 C 18 16.6 14.6 20 10.406 20 L 9.594 20 C 5.4 20 2 16.6 2 12.406 C 2 11.485 2.239 10.579 2.694 9.777 L 4.152 7.207 C 4.551 6.505 4.978 5.82 5.432 5.154 L 8.847 0.151 C 8.927 0.154 9 0.218 9 0.309 L 9 7.812 C 9 8.781 8.404 9.651 7.5 10 L 7.764 10 C 7.289 10.531 7 11.232 7 12 C 7 13.657 8.343 15 10 15 C 11.657 15 13 13.657 13 12 C 13 11.232 12.711 10.531 12.236 10 L 12.5 10 C 11.596 9.651 11 8.781 11 7.812 L 11 0.309 C 11 0.218 11.073 0.154 11.153 0.151 Z" fill="rgba(51, 51, 51, 1.00)"></path>
 			          </svg>Why Bruno
 			        </Link>
 			      </li>
 			      <li>
-			        <Link to="/how-it-works">
+			        <Link to={__dirname + '/how-it-works'}>
 			          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
 			            <path d="M 10 0 C 15.523 0 20 4.477 20 10 C 20 15.523 15.523 20 10 20 C 4.477 20 0 15.523 0 10 C 0 4.477 4.477 0 10 0 Z M 7.615 12 C 7.828 12 8 12.172 8 12.385 L 8 14.571 C 8 14.914 8.414 15.086 8.657 14.843 L 14.843 8.657 C 15.086 8.414 14.914 8 14.571 8 L 12.385 8 C 12.172 8 12 7.828 12 7.615 L 12 5.429 C 12 5.086 11.586 4.914 11.343 5.157 L 5.157 11.343 C 4.914 11.586 5.086 12 5.429 12 Z" fill="rgba(51, 51, 51, 1.00)"></path>
 			          </svg>How it works

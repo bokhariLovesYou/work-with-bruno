@@ -112,7 +112,6 @@ module.exports = {
         name: 'Gatstrap',
         short_name: 'Gatstrap',
         description: 'Gatsby starter for bootstrap a blog',
-        homepage_url: 'https://gatstrap.netlify.com',
         start_url: '/',
         background_color: '#fff',
         theme_color: '#673ab7',
