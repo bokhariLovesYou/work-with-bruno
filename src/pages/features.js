@@ -11,6 +11,7 @@ import ImageComp from 'components/ImageComp.js'
 import SmallContent from 'components/SmallContent'
 import TestimonialTitle from 'components/TestimonialTitle'
 import TitleContentCTA from 'components/TitleContentCTA'
+import TitleContentCTAH2 from 'components/TitleContentCTAH2'
 import BlueCTA from 'components/BlueCTA'
 import Card from 'components/Card'
 import LargeHeroCenteredCTAH2 from 'components/LargeCenteredHeroWithCTAH2'
@@ -55,7 +56,7 @@ class Features extends Component {
             <Container className="text-center text-lg-left">
               <Row className="align-items-xl-center">
                 <Col xl="6">
-                  <TitleContentCTA 
+                  <TitleContentCTA
                     title="Visual design for the busy creative."
                     paragraph="Automated layout design, premade components, and predictive vector editing. Get the basics done faster."
                     customClass="noClass"
@@ -77,10 +78,10 @@ class Features extends Component {
             />
           <Section count="two" customClass="med-large bg-white">
             <Container>
-                  <TitleContentCTA 
+                  <TitleContentCTAH2
                     title="Visual design for the busy creative."
                     paragraph="Automated layout design, premade components, and predictive vector editing. Get the basics done faster."
-                    customClass="pl-15 pr-15"
+                    customClass="pl-15 pr-15 equip-width text-lg-center"
                   />  
             </Container>
             <Container className="pt-4">
