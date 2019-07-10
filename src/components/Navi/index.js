@@ -40,7 +40,7 @@ class Navi extends React.Component {
 	        			<Link to={__dirname + '/why-bruno'}><li>Why Bruno</li></Link>
 	        			<Link to={__dirname + '/how-it-works'}><li>How it works</li></Link>
 	        			<Link to={__dirname + '/features'}><li>Features</li></Link>
-	        			<li>Blog</li>
+	        			<Link to={__dirname + '/blog'}><li>Blog</li></Link>
 	        		</ul>
 	        	</div>
 	        	<div className="cta-wrapper">
@@ -92,11 +92,11 @@ class Navi extends React.Component {
 			        </Link>
 			      </li>
 			      <li>
-			        <a href="/blog">
+			        <Link to={__dirname + '/blog'}>
 			          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
 			            <path d="M 0 3 C 0 1.343 1.343 0 3 0 L 17 0 C 18.657 0 20 1.343 20 3 L 20 17 C 20 18.657 18.657 20 17 20 L 3 20 C 1.343 20 0 18.657 0 17 Z M 5 7 C 5 7.552 5.448 8 6 8 L 14 8 C 14.552 8 15 7.552 15 7 C 15 6.448 14.552 6 14 6 L 6 6 C 5.448 6 5 6.448 5 7 Z M 5 13 C 5 13.552 5.448 14 6 14 L 10 14 C 10.552 14 11 13.552 11 13 C 11 12.448 10.552 12 10 12 L 6 12 C 5.448 12 5 12.448 5 13 Z" fill="rgb(51,51,51)"></path>
 			          </svg>Blog
-			        </a>
+			        </Link>
 			      </li>
 			      <li>
 			        <a className="download-cta" href="/download">
