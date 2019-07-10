@@ -1,17 +1,15 @@
 ---
-title: "The Birth of Movable Type"
+title: "How Can Designers Prepare for the Future?"
 date: "2016-03-01T22:12:03.284Z"
 layout: post
 path: "/hello-world/"
-image: ./Gutenberg.jpg
-description: "Johannes Gensfleisch zur Laden zum Gutenberg (c. 1398 – 1468) was a German blacksmith, goldsmith, printer, and publisher who introduced printing to Europe."
+image: ./cover@2x.jpg
+description: "Insights on automation, the future of product design, the importance of user research, and more from CSS Day 2019."
 category: Typography
 tags:
 - Movable Type
 - Johannes Gutenberg
 ---
-
-<figcaption>Johannes Gutenberg</figcaption>
 
 His invention of mechanical movable type printing started the Printing Revolution and is widely regarded as the most important event of the modern period. It played a key role in the development of the Renaissance, Reformation, the Age of Enlightenment, and the Scientific revolution and laid the material basis for the modern knowledge-based economy and the spread of learning to the masses.
 

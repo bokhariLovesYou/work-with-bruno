@@ -1,15 +1,18 @@
 import { graphql } from 'gatsby'
 import get from 'lodash/get'
 import React from 'react'
-
+import Helmet from 'react-helmet'
 import Post from 'templates/Post'
 import Meta from 'components/Meta'
 import Layout from 'components/Layout'
 import Page from 'templates/Page'
 
 const Template = ({ data, location }) => (
-  <div>
-    <Layout location={location}>
+    <Layout location={location} color="bg-white" footerClass="bg-white">
+      <Helmet>
+        <html className="bg-white" />
+        <body className="bg-white" />
+      </Helmet>
       <Meta
         title={get(data, 'post.frontmatter.title')}
         site={get(data, 'site.meta')}
@@ -26,7 +29,6 @@ const Template = ({ data, location }) => (
         <Page {...this.props} />
       )}
     </Layout>
-  </div>
 )
 export default Template
 
