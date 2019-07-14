@@ -852,4 +852,10 @@ section.custom-404 {
   }
 }
 
+button:focus {
+  outline: none !important;
+}
 
+.hide {
+  display: none !important;
+}

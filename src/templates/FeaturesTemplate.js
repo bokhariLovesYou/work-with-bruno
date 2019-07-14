@@ -44,14 +44,16 @@ class Features extends Component {
         }
       }
 
-    const { location, data } = this.props 
+    const { location, data } = this.props
+    const wpData = data.wordpressPage.acf 
+    const metaData = data.wordpressPage.yoast_meta;
     return (
       <Layout location={location} color={this.state.header[0].customClass} footerClass="bg-white">
         <Helmet>
           <html className={this.state.header[0].customClass} />
           <body className={this.state.header[0].customClass} />
         </Helmet>
-        <Meta site={siteMetadata} title="Features" />
+        <Meta site={siteMetadata} title={metaData.yoast_wpseo_title} descripton={metaData.yoast_wpseo_metadesc} />
           <Section count="one" customClass="bg-blue text-inverted floating-section">
             <Container className="text-center text-lg-left">
               <Row className="align-items-xl-center">
@@ -64,7 +66,7 @@ class Features extends Component {
                 </Col>
                 <Col xl="6 pos-rel">
                   <ImageComp 
-                    imageSrc={data.imageOne.childImageSharp.fluid}
+                    imageSrc={wpData.features_section_one.image.localFile.childImageSharp.fluid}
                     customClass='image-wrapper'
                     imageClass="floating-image"
                   />
@@ -79,41 +81,22 @@ class Features extends Component {
           <Section count="two" customClass="med-large bg-white">
             <Container>
                   <TitleContentCTAH2
-                    title="Visual design for the busy creative."
-                    paragraph="Automated layout design, premade components, and predictive vector editing. Get the basics done faster."
+                    title={wpData.features_section_two.title}
+                    paragraph={wpData.features_section_two.subtitle}
                     customClass="pl-15 pr-15 equip-width text-lg-center"
                   />  
             </Container>
             <Container className="pt-4">
               <Row>
-                <Col lg="6">
+              { wpData.features_section_two.grid_repeater.map ( ( elem, index ) => 
+                <Col lg="6" key={index}>
                   <Card 
-                    imageSrc={data.imageOne.childImageSharp.fluid}
-                    title="Publish."
-                    content="Publish your packages to the private Team Store, where only your team can access, update and work off a shared set of components."
+                    imageSrc={elem.image.localFile.childImageSharp.fluid}
+                    title={elem.title}
+                    content={elem.subtitle}
                   />
                 </Col>
-                <Col lg="6">
-                  <Card 
-                    imageSrc={data.imageOne.childImageSharp.fluid}
-                    title="Forecast."
-                    content="Publish your packages to the private Team Store, where only your team can access, update and work off a shared set of components."
-                  />
-                </Col>
-                <Col lg="6">
-                  <Card 
-                    imageSrc={data.imageOne.childImageSharp.fluid}
-                    title="Simple."
-                    content="Publish your packages to the private Team Store, where only your team can access, update and work off a shared set of components."
-                  />
-                </Col>
-                <Col lg="6">
-                  <Card 
-                    imageSrc={data.imageOne.childImageSharp.fluid}
-                    title="Choose."
-                    content="Publish your packages to the private Team Store, where only your team can access, update and work off a shared set of components."
-                  />
-                </Col>
+              )}
               </Row>
             </Container>
           </Section>
@@ -122,7 +105,7 @@ class Features extends Component {
               <Row className="align-items-center">
                 <Col xl="6" className="order-2 order-xl-1">
                   <ImageComp 
-                    imageSrc={data.imageThree.childImageSharp.fluid}
+                    imageSrc={wpData.features_section_three.image.localFile.childImageSharp.fluid}
                     customClass='noClass'
                     imageClass='tall-image box-shadow'
                   />
@@ -130,9 +113,9 @@ class Features extends Component {
                 <Col xl="6" className="order-1 order-xl-2">
                   <SmallContent 
                     customClass='fix-padding'
-                    dimText='Interactions'
-                    title='Simply rapid prototyping.'
-                    paragraph='Brunö offers tools to design scroll, link and page interactions. But don’t stop there—add a 3D effect or momentum. Create flows that feel real. And do it all in half the time.'
+                    dimText={wpData.features_section_three.label}
+                    title={wpData.features_section_three.title}
+                    paragraph={wpData.features_section_three.paragraph}
                   />
                 </Col>
               </Row>
@@ -141,11 +124,11 @@ class Features extends Component {
           <Section count="four" customClass="med-large testimonial-section bg-white">
             <Container className="text-center">
               <TextContent 
-                content="“Brunö’s React codebase will allow our designers to get closer to high-fidelity implementation with engineering.”"
+                content={wpData.features_section_five.testimonial}
                 customClass="bolder-font pt-2 pb-2 mw-650 ml-auto mr-auto"
               />
               <TestimonialTitle 
-                imageSrc={data.imageFour.childImageSharp.fluid}
+                imageSrc={wpData.features_section_five.image.localFile.childImageSharp.fluid}
                 customClass='noClass'
               />  
             </Container>
@@ -153,9 +136,9 @@ class Features extends Component {
           <Section count="five" customClass="small-section bg-white">
             <Container>
               <BlueCTA 
-                title='Get Brunö'
-                subTitle='Bring your creative ideas to life.'
-                imageSrc={data.imageOne.childImageSharp.fluid}
+                title={wpData.features_cta.title}
+                subTitle={wpData.features_cta.sub_title}
+                imageSrc={wpData.features_cta.image.localFile.childImageSharp.fluid}
               />
             </Container>
           </Section>
@@ -166,43 +149,97 @@ class Features extends Component {
 
 export default Features
 
-export const pageQuery = graphql`
-  query {
-    imageOne: file(relativePath: { eq: "app-one.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 2000) {
-          ...GatsbyImageSharpFluid
-        }
+export const query = graphql`
+  query($id: Int!) {
+    wordpressPage(wordpress_id: { eq: $id }) {
+      title
+      excerpt
+      content
+      yoast_meta {
+        yoast_wpseo_title
+        yoast_wpseo_metadesc
+        yoast_wpseo_canonical
       }
-    }
-    imageTwo: file(relativePath: { eq: "homepage-image.jpeg" }) {
-      childImageSharp {
-        fluid(maxWidth: 3000) {
-          ...GatsbyImageSharpFluid
+      acf {
+        features_section_one {
+          title
+          sub_title
+          button_title
+          button_url
+          image {
+            localFile {
+              childImageSharp {
+                fluid(maxWidth: 3000) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
         }
-      }
-    }
-    imageThree: file(relativePath: { eq: "homepage-image-two.jpeg" }) {
-      childImageSharp {
-        fluid(maxWidth: 3000) {
-          ...GatsbyImageSharpFluid
+        features_section_two {
+          title
+          subtitle
+          button_title
+          button_url
+          grid_repeater {
+            image {
+              localFile {
+                childImageSharp {
+                  fluid(maxWidth: 3000) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
+            }
+            title
+            subtitle
+          }
         }
-      }
-    }
-    imageFour: file(relativePath: { eq: "ash.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 3000) {
-          ...GatsbyImageSharpFluid
+        features_section_three {
+          label
+          title
+          paragraph
+          button_title
+          button_url
+          image {
+            localFile {
+              childImageSharp {
+                fluid(maxWidth: 3000) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
         }
-      }
-    }
-    imageSix: file(relativePath: { eq: "app-three.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 2000) {
-          ...GatsbyImageSharpFluid
+        features_section_five {
+          testimonial
+          title
+          image {
+            localFile {
+              childImageSharp {
+                fluid(maxWidth: 3000) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+        }
+        features_cta {
+          title
+          sub_title
+          button_title
+          button_url
+          image {
+            localFile {
+              childImageSharp {
+                fluid(maxWidth: 3000) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
         }
       }
     }
   }
-`;
-
+`
