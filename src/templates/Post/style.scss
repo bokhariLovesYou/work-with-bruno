@@ -92,9 +92,14 @@ main.article {
     padding-top: 20px;
     margin-top: 40px;
     margin-bottom: 30px;
+    @media (max-width: 420px) {
+      line-height: 1.2;
+      margin-top: 30px;
+    }
       @media (max-width: 340px) {
         font-size: 27px;
-        margin-top: 30px;
+        margin-top: 27px;
+        line-height: 1.2;
       }
     }
   }
