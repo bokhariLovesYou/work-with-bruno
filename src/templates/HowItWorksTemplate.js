@@ -53,16 +53,16 @@ class HowItWorksTemplate extends Component {
           <Section count="two" customClass="med-large bg-night text-inverted border-top-bottom">
             <Container>
               <Row className="align-items-center">
-                <Col xl="6" className="order-xl-2">
+                <Col xl="6" className="order-2 order-xl-2">
                   <ImageComp 
                     imageSrc={wpData.how_section_two.image.localFile.childImageSharp.fluid}
                     customClass='noClass'
                     imageClass="tall-image box-shadow fade-top-less"
                   />
                 </Col>
-                <Col xl="6" className="order-xl-1">
+                <Col xl="6" className="order-1 order-xl-1">
                   <SmallContent 
-                    customClass='bottom-padding'
+                    customClass='fix-padding hw-padding bottom-padding'
                     dimText={wpData.how_section_two.label}
                     title={wpData.how_section_two.title}
                     paragraph={wpData.how_section_two.paragraph}
