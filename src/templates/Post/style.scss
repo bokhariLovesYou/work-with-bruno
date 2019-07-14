@@ -21,15 +21,15 @@ main.article {
     margin: 1rem 0;
     }
     h1 {
-      font-size: 1.5rem;
+      font-size: 36px;
       color: $black;
       line-height: 1.1;
       font-weight: 800;
-      margin-bottom: 1.4rem;
+      margin-bottom: 2.3rem;
       letter-spacing: -2px;
       line-height: 1.15;
       @media (min-width: 370px) {
-        font-size: 1.7rem;
+        font-size: 2.6rem;
       }
       @media (min-width: 500px) {
         font-size: 2.6rem;
@@ -87,11 +87,15 @@ main.article {
     h2 {
     font-weight: 800;
     line-height: 1.1;
-    font-size: 36px;
+    font-size: 30px;
     letter-spacing: -1.5px;
     padding-top: 20px;
     margin-top: 40px;
     margin-bottom: 30px;
+      @media (max-width: 340px) {
+        font-size: 27px;
+        margin-top: 30px;
+      }
     }
   }
 }
